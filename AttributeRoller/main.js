@@ -26,16 +26,16 @@ class Player {
     rollAttributes() {
         for (const key in this.attributes) {
             let reuslts = diceRoller(4, 6);
-            results.sort(function (a, b) { return a - b });//numeric sort w/ compare function
-            results.shift();//remove lowest die roll
-            let sum = sumArrayElements(results);//sum the rolls
-            this.attributess[key] = sum;
+            reuslts.sort(function (a, b) { return a - b });//numeric sort w/ compare function
+            reuslts.shift();//remove lowest die roll
+            let sum = sumArrayElements(reuslts);//sum the rolls
+            this.attributes[key] = sum;
         }
     }
 
     printPlayer() {
         console.log(`NAME: ${this.name}`);
-        for (const [key, value] of Object.entriespthis.attributes) {
+        for (const [key, value] of Object.entries(this.attributes)) {
             console.log(`${key.slice(0, 3).toUpperCase()}: ${value}`);
 
         }
